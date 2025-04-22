@@ -1,12 +1,18 @@
 .header{
     height: 80px;
     width: 100%;
-    background-color: #3A59D1;
+    background-color: #294bd288;
     display: flex;
     color: white;
     justify-content: space-between;
     padding: 20px 50px;
     /* align-items: center; */
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    
 }
 
 .header img{
@@ -19,6 +25,10 @@
     justify-content: start;
     gap: 10px;
     height: 100%;
+}
+
+.toggleimg{
+    cursor: pointer;
 }
 
 @media screen and (max-width:1000px) {

@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import styles from "./NoteContainer.module.css";
 import SavedNotes from "../SavedNotes/SavedNotes";
+import { DarkModeContext } from "../Main/Main";
 
 const moods = [
     { type: "happy", emoji: "😊", color: "#F8D664" },
@@ -16,6 +17,7 @@ const NoteContainer = ({ weatherDetails, city }) => {
     const [addNote, setAddNote] = useState(false);
     const [note, setNote] = useState("");
     const [diaryEntries, setDiaryEntries] = useState([]);
+    const { darkMode } = useContext(DarkModeContext);
 
     const handleMoodSelect = (mood, color) => {
         setSelectedMood(mood);
@@ -70,11 +72,25 @@ const NoteContainer = ({ weatherDetails, city }) => {
 
     return (
         <>
-            <div className={styles.noteContainer} style={{ backgroundColor: bgColor }}>
-                <h2>Select Your Mood</h2>
+            <div
+                className={styles.noteContainer}
+                style={{
+                    backgroundColor: darkMode ? "#333" : selectedMood ? bgColor : "#fff",
+                    boxShadow: darkMode ? "0 0 10px rgba(255, 255, 255, 0.2)" : "0 0 10px rgba(0, 0, 0, 0.1)",
+                }}
+            >
+                <h2 style={{ color: darkMode ? "white" : "black" }}>Select Your Mood</h2>
                 <div className={styles.moodOptions}>
                     {moods.map((mood) => (
-                        <button key={mood.type} className={`${styles.moodButton} ${selectedMood === mood.type ? styles.active : ""}`} onClick={() => handleMoodSelect(mood.type, mood.color)} >
+                        <button
+                            key={mood.type}
+                            className={`${styles.moodButton} ${selectedMood === mood.type ? styles.active : ""}`}
+                            onClick={() => handleMoodSelect(mood.type, mood.color)}
+                            style={{
+                                backgroundColor: selectedMood === mood.type ? mood.color : "transparent",
+                                color: darkMode ? "#fff" : "#000",
+                            }}
+                        >
                             {mood.emoji}
                         </button>
                     ))}
@@ -82,12 +98,20 @@ const NoteContainer = ({ weatherDetails, city }) => {
 
                 {addNote ? (
                     <>
-                        <textarea className={styles.noteInput} placeholder="Write your note here..." value={note} onChange={(e) => setNote(e.target.value)}
+                        <textarea
+                            className={styles.noteInput}
+                            placeholder="Write your note here..."
+                            value={note}
+                            onChange={(e) => setNote(e.target.value)}
                         />
-                        <button className={styles.saveBtn} onClick={handleSaveNote}>Save Note</button>
+                        <button className={styles.saveBtn} onClick={handleSaveNote}>
+                            Save Note
+                        </button>
                     </>
                 ) : (
-                    <button onClick={() => setAddNote(true)} className={styles.addBtn}>Add Note</button>
+                    <button onClick={() => setAddNote(true)} className={styles.addBtn}>
+                        Add Note
+                    </button>
                 )}
             </div>
 

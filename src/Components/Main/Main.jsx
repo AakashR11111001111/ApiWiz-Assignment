@@ -26,8 +26,6 @@ const Main = () => {
                 const response = await axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${lat},${lon}&key=${API_KEY_OPEN_CAGE}`);
                 console.log(response);                
                 setWeatherData(response.data);
-                
-
             } catch (error) {
                 console.error("Error fetching location data:", error);
             }
@@ -57,6 +55,7 @@ const Main = () => {
     const toggleDarkMode = () => {
         setDarkMode(!darkMode);
     };
+
     const handleSaveNote = () => {
         const currentDate = new Date();
         const date = currentDate.toLocaleDateString();
@@ -78,26 +77,29 @@ const Main = () => {
 
     return (
         <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>
-            <div className={darkMode ? "dark" : ""}>
+            <div className={darkMode ? "dark" : ""} style={{ minHeight: "100vh" }}>
                 {loading ? (
                     <Preloader />
                 ) : (
                     <div>
                         {weatherData?.results[0]?.components ? (
-                            <div style={{ background: darkMode ? '#333' : '#fff', color: darkMode ? '#fff' : '#000' }}>
+                            <div>
                             </div>
                         ) : (
                             <p>Unable to fetch location data.</p>
                         )}
 
-                        {
-                            weatherDetails && (
-                                <div style={{ background: darkMode ? '#444' : '#eee', color: darkMode ? '#000' : '#111', height: "100vh", width:"100%" }}>
-                                    <Header city={city} temperature={weatherDetails.main?.temp} status={weatherDetails.weather[0].main} />
-                                    <NoteContainer weatherDetails={weatherDetails} note={note} setNote={setNote} handleSaveNote={handleSaveNote} />
-                                </div>
-                            )
-                        }
+                        {weatherDetails && (
+                            <div style={{ background: darkMode ? '#444' : '#eee', color: darkMode ? '#fff' : '#111', height: "100%", paddingTop: "100px" }}>
+                                <Header city={city} temperature={weatherDetails.main?.temp} status={weatherDetails.weather[0].main} />
+                                <NoteContainer 
+                                    weatherDetails={weatherDetails} 
+                                    note={note} 
+                                    setNote={setNote} 
+                                    handleSaveNote={handleSaveNote} 
+                                />
+                            </div>
+                        )}
                     </div>
                 )}
             </div>
