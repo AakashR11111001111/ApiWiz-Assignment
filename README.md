@@ -1,4 +1,4 @@
-# Mood Tracking Diary App
+# AuraWiz | Mood Tracking Diary App
 
 ## Overview
 The **Mood Tracking Diary App** allows users to record their daily moods along with weather details, and provides an intuitive interface for tracking emotional well-being over time. The app integrates real-time weather data and provides a mood selection feature with various mood categories such as "Happy", "Neutral", "Unhappy", "Angry", etc. The app also supports dark mode and saves diary entries locally for later viewing.
