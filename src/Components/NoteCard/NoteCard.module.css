@@ -1,0 +1,55 @@
+.noteCard {
+    background-color: #f9f9f9;
+    padding: 15px;
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 8px;
+    display: flex;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-direction: column; 
+}
+
+.noteCard h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    white-space: nowrap;  
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.noteCard p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+.noteCard p strong {
+    font-weight: 600;
+}
+
+
+@media screen and (max-width:1000px) {
+    .noteCard {
+        width: 90%;
+        padding: 10px;
+    }
+    .noteCard h3 {
+        font-size: 1rem;
+    }
+    .noteCard p {
+        font-size: 0.9rem;
+    }
+    .noteCard p strong {
+        font-size: 0.9rem;
+    }
+    .noteCard p span {
+        font-size: 0.8rem;
+    }
+    .noteCard p span strong {
+        font-size: 0.8rem;
+    }
+    
+}

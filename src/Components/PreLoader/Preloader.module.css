@@ -1,0 +1,25 @@
+.preload{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #abb2b9;
+}
+
+.preload h1{
+    font-size: 5vw;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    color: #d5f5e3;
+    user-select: none;
+}

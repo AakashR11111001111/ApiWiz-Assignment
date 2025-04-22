@@ -1,0 +1,101 @@
+.noteContainer {
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    border-radius: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.4s ease;
+}
+  
+.noteContainer h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+  
+.moodOptions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+  
+.moodButton {
+    font-size: 26px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.3s;
+}
+  
+.moodButton:hover {
+    transform: scale(1.1);
+}
+  
+.active {
+    border-color: #000;
+    background-color: #e0e0e0;
+}
+  
+.noteInput {
+    width: 100%;
+    min-height: 100px;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+  
+.addBtn, .saveBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #111;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.addBtn:hover,.saveBtn:hover {
+    background-color: #333;
+}
+  
+
+
+@media screen and (max-width:1000px) {
+    .noteContainer {
+        width: 90%;
+        padding: 20px 10px;
+    }
+
+    .moodButton{
+        font-size: 18px;
+        padding: 8px;
+    }
+  
+    .noteContainer h2 {
+        font-size: 15px;
+    }
+  
+    .moodButton {
+        font-size: 20px;
+    }
+  
+    .noteInput {
+        font-size: 10px;
+    }
+  
+    .addBtn, .saveBtn {
+        font-size: 14px;
+    }
+}

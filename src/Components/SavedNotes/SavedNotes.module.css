@@ -1,0 +1,38 @@
+.savedNotesContainer{
+    min-height: 100vh;
+    width: 100%;
+    background-color: #7AC6D2;
+}
+
+.head{
+    color: white;
+    font-weight: 400;
+    text-align: center;
+}
+
+.p{
+    text-align: center;
+}
+
+
+@media screen and (max-width:1000px) {
+    .savedNotesContainer{
+        padding: 20px 10px;
+    }
+    .head{
+        font-size: 20px;
+    }
+    .p{
+        font-size: 15px;
+    }
+    .noteCard{
+        width: 90%;
+    }   
+    .noteCard h3{
+        font-size: 15px;
+    }
+    .noteCard p{
+        font-size: 12px;
+    }
+
+}
