@@ -13,7 +13,7 @@ const Header = ({ city, temperature, status }) => {
             <div>
                 <h2> <img src="/icons/cloud.png" alt="" /> {status}</h2>
             </div>
-            <div style={{ display: "flex", gap: "10px" }}>
+            <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
                 <h2> <img src="/icons/temperature.png" alt="" />{temperature}°C</h2>
                 <img 
                     onClick={DarkModeCtx.toggleDarkMode} 
